@@ -1,0 +1,30 @@
+//the outer class cannot be static it can be asstract/public/final
+class OuterClass
+{
+    int a;
+    public void run()
+    {
+        System.out.println("hi i'm outerClass");
+    }
+    static class InnerClass
+    {
+        public void bow()
+        {
+            System.out.println("Hi i'm inner class");
+        }
+    }
+}
+class BowBow{
+public static void main(String args[])
+{
+    OuterClass o = new OuterClass();
+    o.run();
+    OuterClass.InnerClass i =  new OuterClass.InnerClass();//we can directly access without o
+    i.bow();
+}
+}
+
+/*
+java -cp /tmp/fxD73bWpyQ BowBow
+hi i'm outerClassHi i'm inner class
+*/
